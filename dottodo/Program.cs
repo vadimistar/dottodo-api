@@ -52,7 +52,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend",
             policyBuilder => policyBuilder
-                .WithOrigins("http://localhost:5173")
+                .WithOrigins(builder.Configuration["Frontend:Origin"])
                 .AllowCredentials()
                 .AllowAnyHeader()
                 .AllowAnyMethod());
